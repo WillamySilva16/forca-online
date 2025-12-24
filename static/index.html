@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Forca Online</title>
+</head>
+<body>
+  <h2>🎮 Jogo da Forca Online</h2>
+
+  <pre id="log"></pre>
+
+  <input id="letra" maxlength="1" autofocus placeholder="Digite uma letra"/>
+  <button onclick="enviar()">Enviar</button>
+
+  <script>
+    const log = document.getElementById("log");
+    const ws = new WebSocket(`wss://${location.host}/ws`);
+
+    ws.onmessage = (e) => {
+      log.textContent += "\n" + e.data;
+    };
+
+    function enviar() {
+      const l = document.getElementById("letra");
+      ws.send(l.value);
+      l.value = "";
+      l.focus();
+    }
+  </script>
+</body>
+</html>

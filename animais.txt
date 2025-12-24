@@ -51,7 +51,6 @@ Coruja
 Falcão
 Tucano
 Arara
-Papagaio
 Cisne
 Flamingo
 Pinguim
@@ -72,4 +71,4 @@ Teiú
 Tartaruga
 Jabuti
 Cágado
-Geico
+Gecko
